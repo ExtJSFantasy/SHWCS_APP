@@ -1,0 +1,15 @@
+{
+  "index.html": {
+    "refer": [
+      "views/main.html"
+    ],
+    "resources": []
+  },
+  "views/main.html": {
+    "refer": [
+      "views/inforCollection.html",
+      "views/collected.html"
+    ],
+    "resources": []
+  }
+}

@@ -1,7 +1,11 @@
 {
-	"@platforms": ["android", "iPhone", "iPad"],
+	"@platforms": [
+		"android",
+		"iPhone",
+		"iPad"
+	],
 	"id": "H5895A1AE",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "SHWCS_APP",/*应用名称，程序桌面图标名称*/
+	"name": "综合评估系统",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.0.0",/*应用版本名称*/
 		"code": "83"
@@ -17,27 +21,27 @@
 		"url": "http://www.dcloud.io"
 	},
 	"permissions": {
-        "Cache": {
-            "description": "管理应用缓存"
-        },
-        "Console": {
-            "description": "跟踪调试输出日志"
-        },
-        "Contacts": {
-            "description": "访问系统联系人信息"
-        },
-        "Events": {
-            "description": "应用扩展事件"
-        },
-        "Messaging": {
-            "description": "访问通讯能力"
-        },
-        "Maps": {
-            "description": "管理地图插件"
-        },
-        "Speech": {
-            "description": "管理语音识别插件"
-        }
+		"Cache": {
+			"description": "管理应用缓存"
+		},
+		"Console": {
+			"description": "跟踪调试输出日志"
+		},
+		"Contacts": {
+			"description": "访问系统联系人信息"
+		},
+		"Events": {
+			"description": "应用扩展事件"
+		},
+		"Messaging": {
+			"description": "访问通讯能力"
+		},
+		"Maps": {
+			"description": "管理地图插件"
+		},
+		"Speech": {
+			"description": "管理语音识别插件"
+		}
 	},
 	"plus": {
 		"splashscreen": {
@@ -47,6 +51,15 @@
 		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
 		"distribute": {
+			"plugins": {
+				"maps": {
+					"amap": {
+						"appkey_ios": "9a06205e708811d29dafc7ffa66cb2da",
+						"appkey_android": "9a06205e708811d29dafc7ffa66cb2da",
+						"description": "高德地图"
+					}
+				}
+			},
 			"apple": {
 				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
 				"mobileprovision": "",/*iOS应用打包配置文件*/
@@ -60,9 +73,39 @@
 				"keystore": "",/*Android应用打包使用的密钥库文件*/
 				"password": "",/*Android应用打包使用密钥库中证书的密码*/
 				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
-				"permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"]
+				"permissions": [
+					"<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+					"<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+					"<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>",
+					"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+					"<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+					"<uses-permission android:name=\"android.permission.INTERNET\"/>",
+					"<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+					"<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+					"<uses-feature android:name=\"android.hardware.camera\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+					"<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>",
+					"<uses-permission android:name=\"android.permission.CAMERA\"/>"
+				]
 			},
-			"orientation": ["portrait-primary", "portrait-secondary"],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"orientation": [
+				"portrait-primary",
+				"portrait-secondary"
+			],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
 			"icons": {
 				"ios": {
 					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
@@ -91,11 +134,12 @@
 					}
 				},
 				"android": {
-					"mdpi": "", /*普通屏程序图标，分辨率：48x48*/
-					"ldpi": "", /*大屏程序图标，分辨率：48x48*/
-					"hdpi": "", /*高分屏程序图标，分辨率：72x72*/
-					"xhdpi": "",/*720P高分屏程序图标，分辨率：96x96*/
-					"xxhdpi": ""
+					"mdpi": "launcherImgs/ic_launcher.png", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "launcherImgs/ic_launcher.png", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "launcherImgs/ic_launcher.png", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "launcherImgs/ic_launcher.png",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": "launcherImgs/ic_launcher.png",
+					"xxxhdpi": "launcherImgs/ic_launcher.png"
 				}
 			},
 			"splashscreen": {
@@ -124,6 +168,106 @@
 					"xxhdpi": ""
 				}
 			}
+		},
+		"ads": {
+			"rp": false,
+			"splash": false,
+			"push": false
+		},
+		"adid": ""
+	},
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [],
+				"refer": [
+					"views/main.html"
+				],
+				"priority": 0
+			},
+			"views/main.html": {
+				"resources": [],
+				"refer": [
+					"views/inforCollection.html",
+					"views/collected.html"
+				],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"imgs/input_bar_bg_normal.9.png",
+				"imgs/icon_arrow_up.png",
+				"imgs/dir6.png",
+				"imgs/icon_back.png",
+				"imgs/ic_jifen_close.png",
+				"imgs/ic_logo.png",
+				"imgs/custom_info_bubble.9.png",
+				"imgs/dir5.png",
+				"imgs/ic_address.png",
+				"imgs/ic_launcher.jpg",
+				"imgs/dir10.png",
+				"imgs/ic_city.png",
+				"imgs/dir9.png",
+				"controllers/index.js",
+				"imgs/ic_jifen_open.png",
+				"imgs/icon_arrow_down.png",
+				"imgs/dir3.png",
+				"js/mui.js",
+				"README.md",
+				"imgs/umeng_update_btn_check_on_pressed_holo_light.png",
+				"imgs/dir12.png",
+				"css/main.css",
+				"launcherImgs/ic_launcher.png",
+				"fonts/mui.ttf",
+				"imgs/ic_jifen_open_unclickable.png",
+				"imgs/ic_download.png",
+				"imgs/iconfont-tianjia.png",
+				"imgs/actionbar_more_icon.png",
+				"imgs/dir14.png",
+				"imgs/umeng_update_btn_check_off_holo_light.png",
+				"imgs/end.png",
+				"css/mui.css",
+				"js/fastclick.js",
+				"imgs/input_bar_bg_active.9.png",
+				"imgs/start.png",
+				"imgs/umeng_update_close_bg_tap.png",
+				"imgs/ic_qu.png",
+				"imgs/ic_shijiao_open.png",
+				"imgs/ic_clock.png",
+				"imgs/dir11.png",
+				"imgs/umeng_update_btn_check_off_pressed_holo_light.png",
+				"js/function.js",
+				"imgs/ic_caiji.png",
+				"js/vue.min.js",
+				"imgs/dir1.png",
+				"imgs/icon_arrow_b_down.png",
+				"imgs/collection_icon_failure.png",
+				"imgs/dir15.png",
+				"css/index.css",
+				"imgs/login_user.png",
+				"imgs/login_password.png",
+				"imgs/ic_time.png",
+				"js/mui.min.js",
+				"imgs/umeng_update_btn_check_on_focused_holo_light.png",
+				"imgs/dir4.png",
+				"imgs/ic_jifen_close_unclickable.png",
+				"imgs/umeng_update_btn_check_off_focused_holo_light.png",
+				"imgs/dir7.png",
+				"imgs/check.png",
+				"imgs/loading.9.png",
+				"imgs/umeng_update_close_bg_normal.png",
+				"imgs/dir2.png",
+				"controllers/main.js",
+				"imgs/umeng_update_btn_check_on_holo_light.png",
+				"imgs/dir8.png",
+				"imgs/empty_photo.9.png",
+				"imgs/ic_shijiao_close.png",
+				"imgs/ic_dingwei.png",
+				"css/mui.min.css",
+				"imgs/dir13.png",
+				"imgs/arrow_down.png"
+			]
 		}
 	}
 }

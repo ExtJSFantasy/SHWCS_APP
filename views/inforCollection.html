@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.label-input-gray {
+				border: solid 1px !important;
+				background: #efeff4 !important;
+				border-color: #999 !important;
+				padding-left: 1rem !important;
+				color: gray;
+			}
+			
+			.label-input-arrow {
+				border: solid 1px !important;
+				background: #efeff4 !important;
+				border-color: #efeff4 !important;
+				padding-left: 1rem !important;
+				/* color: gray; */
+				background: url(../imgs/arrow_down.png) right center no-repeat #fff!important;
+				background-size: 20px !important;
+			}
+			
+			.mui-input-group .mui-input-row:after {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 15px;
+				height: 1px;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: transparent;
+			}
+			
+			input[type=color],
+			input[type=date],
+			input[type=datetime-local],
+			input[type=datetime],
+			input[type=email],
+			input[type=month],
+			input[type=number],
+			input[type=password],
+			input[type=search],
+			input[type=tel],
+			input[type=text],
+			input[type=time],
+			input[type=url],
+			input[type=week],
+			select,
+			{
+				line-height: 21px;
+				width: 100%;
+				height: 34px;
+				margin-bottom: 15px;
+				padding: 10px 15px;
+				-webkit-user-select: text;
+				border: 1px solid rgba(0, 0, 0, .2);
+				border-radius: 3px;
+				outline: 0;
+				background-color: #fff;
+				-webkit-appearance: none;
+			}
+			
+			.md-input-height {
+				height: 36px !important;
+			}
+			
+			.md-over-send-text {
+				color: black;
+				line-height: 36px;
+			}
+			
+			#rectangle {
+				width: 200px;
+				height: 100px;
+				background: red;
+			}
+			
+			#div5 {
+				width: 50px;
+				height: 0;
+				border-top: 40px blue solid;
+				border-bottom: none;
+				border-left: none;
+				border-right: transparent 30px solid;
+			}
+			
+			#div6 {
+				width: 50px;
+				height: 0;
+				margin-left: -30px;
+				border-top: none;
+				border-bottom: 40px blue solid;
+				border-left: transparent 30px solid;
+				border-right: none;
+			}
+			
+			ul,
+			menu,
+			dir {
+				display: block;
+				list-style-type: disc;
+				-webkit-margin-before: 1em;
+				-webkit-margin-after: 2em;
+				-webkit-margin-start: 0px;
+				-webkit-margin-end: 0px;
+				-webkit-padding-start: 40px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="mui-content">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title" id="title">非定点信息采集</h1>
+				<a class="mui-pull-right" style="line-height: 44px;">提交</a>
+			</header>
+			<div class="mui-content">
+				<div style="color: #03A9F4;margin-top: 8px;margin-left: 5px;"><span>.区域信息</span></div>
+				<div style="width: 72.72px;height: 1px;margin-left: 5px;background-color: #b5b0b0;"></div>
+				<ul class="mui-table-view mui-grid-view" style="margin-top: 10px;">
+					<li class="mui-table-view-cell">
+						<div class="mui-input-row item-flex" style="display: flex;">
+							<label style="text-align: left; flex: 1;    width: 108.43px;" class="label-end label-end-left-width">市区/郊区</label>
+							<img style="width: 65px;height: 30px;" src="../imgs/ic_jifen_open.png" />
+							<!--<img style="width: 65px;height: 29px;" src="../imgs/ic_jifen_close.png" />-->
+
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-input-row item-flex">
+							<label style="text-align: left;" class="label-end label-end-left-width">区域</label>
+							<input class="label-input-arrow md-input-height" readonly placeholder="选择区域" type="text">
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-input-row item-flex">
+							<label style="text-align: left;" class="label-end label-end-left-width">街道</label>
+							<input class="label-input-arrow md-input-height" readonly placeholder="选择街道" type="text">
+						</div>
+					</li>
+					<li class="mui-table-view-cell" style="width: 100%;text-align: left;">
+						<label style="    padding: 11px 15px;" style="">地址</label>
+						<textarea id="remark" rows="5" style="margin-top: .5rem;" placeholder="请输入详细地址"></textarea>
+					</li>
+				</ul>
+				<div style="color: #03A9F4;margin-top: 8px;margin-left: 5px;"><span>.评分细则</span></div>
+				<div style="width: 72.72px;height: 1px;margin-left: 5px;background-color: #b5b0b0;"></div>
+				<ul class="mui-table-view mui-grid-view" style="margin-top: 10px;display: block;
+				list-style-type: disc;
+				-webkit-margin-after: 2em;
+				-webkit-margin-start: 0px;
+				-webkit-margin-end: 2em;">
+					<li class="mui-table-view-cell">
+						<div class="mui-input-row item-flex">
+							<label style="text-align: left;" class="label-end label-end-left-width">管理类别</label>
+							<input class="label-input-arrow md-input-height" readonly placeholder="选择类别" type="text">
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-input-row item-flex">
+							<label style="text-align: left;" class="label-end label-end-left-width">管理主项</label>
+							<input class="label-input-arrow md-input-height" readonly placeholder="选择主项" type="text">
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-input-row item-flex">
+							<label style="text-align: left;" class="label-end label-end-left-width">管理子项</label>
+							<input class="label-input-arrow md-input-height" readonly placeholder="选择子项" type="text">
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-input-row item-flex">
+							<label style="text-align: left;" class="label-end label-end-left-width">管理指标</label>
+							<input class="label-input-arrow md-input-height" readonly placeholder="选择子表" type="text">
+						</div>
+					</li>
+				</ul>
+				<div style="color: #03A9F4;margin-top: 8px;margin-left: 5px;"><span>.情况描述</span></div>
+				<div style="width: 72.72px;height: 1px;margin-left: 5px;background-color: #b5b0b0;"></div>
+				<div class="mui-input-row item-flex">
+					<label style="text-align: left;" class="label-end label-end-left-width">扣分</label>
+					<input class="label-input-arrow md-input-height" style="    width: 30%;
+    float: left;" readonly placeholder="选择分数" type="text">
+				</div>
+				<label style="    padding: 11px 15px;" style="">备注</label>
+				<textarea id="remark" rows="5" style="margin-top: .5rem;" placeholder="请对扣分做具体描述"></textarea>
+				<div style="color: #03A9F4;margin-top: 8px;margin-left: 5px;"><span>.地理坐标</span></div>
+				<div style="width: 72.72px;height: 1px;margin-left: 5px;background-color: #b5b0b0;"></div>
+				<div id="map" style="width:100%;"></div>
+				<div id="footer">
+					[当前位置]<br />
+					<span id="address"></span>
+				</div>
+				<!--<div id="goto" onclick="goto();"></div>-->
+				<div style="color: #03A9F4;margin-top: 8px;margin-left: 5px;"><span>.图片浏览</span></div>
+				<div style="width: 72.72px;height: 1px;margin-left: 5px;background-color: #b5b0b0;"></div>
+				<form class="mui-input-group" id="addForm" style="margin-top: .5rem;">
+					<div class="mui-row" style="">
+						<div class="mui-col-xs-3">
+							<img style="width: 90px;" src="../imgs/iconfont-tianjia.png" />
+						</div>
+						<div class="mui-col-xs-9">
+							<ul class="mui-table-view flex" style="width: 100%;height: 100%;display: flex;">
+								<li class="mui-table-view-cell ">
+									<!--<img style="width:100px;height:100px;background-size: 100px 100px;" :src="img2.url" data-preview-src="" data-preview-group="1" />
+									<span class="icon-minus2 del" @tap="onTapDeleteItem2(img2,index)">
+			        		            </span>-->
+								</li>
+							</ul>
+						</div>
+					</div>
+				</form>
+				<div style="color: #03A9F4;margin-top: 8px;margin-left: 5px;"><span>.上一次发送的信息</span></div>
+				<div style="width: 140.72px;height: 1px;margin-left: 5px;background-color: #b5b0b0;"></div>
+				<form class="mui-input-group" id="addForm" style="margin-top: .5rem;">
+					<div class="mui-input-row">
+						<label>区域</label>
+						<p class="md-over-send-text">区域1</p>
+					</div>
+					<div class="mui-input-row">
+						<label>街道</label>
+						<p class="md-over-send-text">区域1</p>
+					</div>
+					<div class="mui-input-row">
+						<label>地点描述</label>
+						<p class="md-over-send-text">区域1</p>
+					</div>
+					<div style="width: 100%;height: 1px;margin-left: 5px;background-color: #b5b0b0;"></div>
+					<div class="mui-input-row">
+						<label>管理类别</label>
+						<p class="md-over-send-text">区域1</p>
+					</div>
+					<div class="mui-input-row">
+						<label>检查主项</label>
+						<p class="md-over-send-text">区域1</p>
+					</div>
+					<div class="mui-input-row">
+						<label>检查子项</label>
+						<p class="md-over-send-text">区域1</p>
+					</div>
+					<div class="mui-input-row">
+						<label>检查指标</label>
+						<p class="md-over-send-text">区域1</p>
+					</div>
+					<div style="width: 100%;height: 1px;margin-left: 5px;background-color: #b5b0b0;"></div>
+					<div class="mui-input-row">
+						<label>情况描述</label>
+						<p class="md-over-send-text">描述类容</p>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var map, center, address;
+
+			function showMap() {
+				plus.nativeUI.showWaiting();
+				//创建地图
+				map = new plus.maps.Map('map');
+				//设置缩放级别
+				map.setZoom(18);
+				//开启用户位置显示
+				map.showUserLocation(true);
+				// 显示地图内置缩放控件
+				map.showZoomControls(true);
+				//map.setTraffic(true);
+				map.getUserLocation(function(state, point) {
+					//console.log(JSON.stringify(point));
+					locationPos = point;
+					center = new plus.maps.Point(point.longitude, point.latitude);
+
+					//var distance = BMapLib.GeoUtils.getDistance(point.longitude, point.latitude, 116.347496,39.970191).toFixed(2);
+					//console.log(distance);
+					var circleObj = new plus.maps.Circle(center, 100);
+					//设置地图中心点
+					map.setCenter(center);
+					circleObj.setFillOpacity(0.2);
+					// 设置圆圈的填充颜色
+					circleObj.setFillColor('#007aff');
+					// 设置圆圈的边框颜色为红色
+					circleObj.setStrokeColor('#007aff');
+					map.addOverlay(circleObj);
+					//在周围设置图标 "latitude":34.2337,"longitude":108.903271,
+					/*var bike1 = new plus.maps.Point(point.longitude + 0.0001, point.latitude + 0.0001);
+					var bike1Icon = new plus.maps.Marker(bike1);
+						bike1Icon.setIcon('../imgs/bike.png');
+					map.addOverlay(bike1Icon);*/
+
+					var bike2 = new plus.maps.Point(point.longitude - 0.0001, point.latitude - 0.0003);
+					var bike2Icon = new plus.maps.Marker(bike2);
+					bike2Icon.setIcon('../imgs/bike.png');
+					bike2Icon.setLabel("欢迎");
+					//var bubble = new plus.maps.Bubble("打造最好的HTML5移动开发工具");
+					//bike2Icon.setBubble(bubble);
+					map.addOverlay(bike2Icon);
+				});
+				//获取用户地址信息
+				plus.geolocation.getCurrentPosition(function(p) {
+					plus.nativeUI.closeWaiting();
+					address = p.address.poiName;
+					document.getElementById('address').innerHTML = address;
+				}, function() {
+
+				});
+
+			}
+
+			var winHeight = document.documentElement.clientHeight;
+			document.getElementById('map').style.height = (winHeight - 88 - 64) + 'px';
+
+			document.addEventListener('plusready', function() {
+				showMap();
+			});
+
+			function goto() {
+				plus.maps.openSysMap(center, address, center);
+			}
+		</script>
+	</body>
+
+</html>

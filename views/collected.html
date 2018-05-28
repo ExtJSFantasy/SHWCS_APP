@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			#title {
+				color: white;
+			}
+			.md-item-display{
+				display: flex;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<header class="mui-bar mui-bar-nav" style="background-color: #007aff;">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
+				<h1 class="mui-title" id="title">定点采集</h1>
+				<a class="mui-pull-right"><img src="../imgs/actionbar_more_icon.png" style="width: 36px;" /></a>
+			</header>
+			<div id="map" style="width:100%;"></div>
+				<div id="footer">
+					[当前位置]<br />
+					<span id="address"></span>
+				</div>
+			<div id="" class="mui-content">
+				<div id="slider" class="mui-slider">
+					<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+						<a class="mui-control-item" href="#item1mobile">
+							采集列表
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							采集分布
+						</a>
+					</div>
+					<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+					<div class="mui-slider-group">
+						<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+							<div id="scroll1" class="mui-scroll-wrapper">
+								<div class="mui-scroll">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											<div class="md-item-display"><span style="flex: 1;">嘉定区</span><span style="flex: 1;">马陆镇</span><span style="flex: 1;    text-align: right;">9.89公里</span></div>
+											<div style="display: flex;margin-top: 5px;margin-bottom: 5px;font-size: 12px;"><span style="flex: 1;">2018-05-10</span><span style="flex: 1;">餐厨垃圾管理</span><span style="flex: 1;"></span></div>
+											<div style="display: flex;"><span style="flex: 1;font-size: 12px;">上海市嘉定区马陆镇浏翔公路2248弄17号</span></div>
+										</li>
+										<li class="mui-table-view-cell">
+											<div class="md-item-display"><span style="flex: 1;">普陀区</span><span style="flex: 1;">真如镇</span><span style="flex: 1;    text-align: right;">3.91公里</span></div>
+											<div style="display: flex;margin-top: 5px;margin-bottom: 5px;font-size: 12px;"><span style="flex: 1;">2018-05-10</span><span style="flex: 1;">餐厨垃圾管理</span><span style="flex: 1;"></span></div>
+											<div style="display: flex;"><span style="flex: 1;font-size: 12px;">上海市普陀区丹巴路1720号</span></div>
+										</li>
+										<li class="mui-table-view-cell">
+											<div class="md-item-display"><span style="flex: 1;">嘉定区</span><span style="flex: 1;">马陆镇</span><span style="flex: 1;    text-align: right;">9.89公里</span></div>
+											<div style="display: flex;margin-top: 5px;margin-bottom: 5px;font-size: 12px;"><span style="flex: 1;">2018-05-10</span><span style="flex: 1;">餐厨垃圾管理</span><span style="flex: 1;"></span></div>
+											<div class="md-item-display"><span style="flex: 1;font-size: 12px;">上海市嘉定区马陆镇浏翔公路2248弄17号</span></div>
+										</li>
+										<li class="mui-table-view-cell">
+											<div style="display: flex;"><span style="flex: 1;">嘉定区</span><span style="flex: 1;">马陆镇</span><span style="flex: 1;    text-align: right;">9.89公里</span></div>
+											<div style="display: flex;margin-top: 5px;margin-bottom: 5px;font-size: 12px;"><span style="flex: 1;">2018-05-10</span><span style="flex: 1;">餐厨垃圾管理</span><span style="flex: 1;"></span></div>
+											<div class="md-item-display"><span style="flex: 1;font-size: 12px;">上海市嘉定区马陆镇浏翔公路2248弄17号</span></div>
+										</li>
+										<li class="mui-table-view-cell">
+											<div class="md-item-display"><span style="flex: 1;">嘉定区</span><span style="flex: 1;">马陆镇</span><span style="flex: 1;    text-align: right;">9.89公里</span></div>
+											<div style="display: flex;margin-top: 5px;margin-bottom: 5px;font-size: 12px;"><span style="flex: 1;">2018-05-10</span><span style="flex: 1;">餐厨垃圾管理</span><span style="flex: 1;"></span></div>
+											<div class="md-item-display"><span style="flex: 1;font-size: 12px;">上海市嘉定区马陆镇浏翔公路2248弄17号</span></div>
+										</li>
+										<li class="mui-table-view-cell">
+											<div class="md-item-display"><span style="flex: 1;">嘉定区</span><span style="flex: 1;">马陆镇</span><span style="flex: 1;    text-align: right;">9.89公里</span></div>
+											<div style="display: flex;margin-top: 5px;margin-bottom: 5px;font-size: 12px;"><span style="flex: 1;">2018-05-10</span><span style="flex: 1;">餐厨垃圾管理</span><span style="flex: 1;"></span></div>
+											<div style="display: flex;"><span style="flex: 1;font-size: 12px;">上海市嘉定区马陆镇浏翔公路2248弄17号</span></div>
+										</li>
+										<li class="mui-table-view-cell">
+											<div class="md-item-display"><span style="flex: 1;">嘉定区</span><span style="flex: 1;">马陆镇</span><span style="flex: 1;    text-align: right;">9.89公里</span></div>
+											<div style="display: flex;margin-top: 5px;margin-bottom: 5px;font-size: 12px;"><span style="flex: 1;">2018-05-10</span><span style="flex: 1;">餐厨垃圾管理</span><span style="flex: 1;"></span></div>
+											<div class="md-item-display"><span style="flex: 1;font-size: 12px;">上海市嘉定区马陆镇浏翔公路2248弄17号</span></div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div id="item2mobile" class="mui-slider-item mui-control-content">
+							<div id="scroll2" class="mui-scroll-wrapper">
+								<div class="mui-scroll">
+									<!--<div class="mui-loading">
+										<div class="mui-spinner">
+										</div>
+									</div>-->
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-4
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-5
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-6
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-7
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-8
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-9
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-7
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-8
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-9
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-7
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-8
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-9
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-7
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-8
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-9
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-7
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-8
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-9
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-7
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-8
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-9
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-7
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-8
+										</li>
+										<li class="mui-table-view-cell">
+											第一个选项卡子项-9
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				indicators: true //是否显示滚动条
+			});
+			var winHeight = document.documentElement.clientHeight;
+			document.getElementById('item1mobile').style.height = (winHeight - 44 - 38) + 'px';
+			document.getElementById('item2mobile').style.height = (winHeight - 44 - 38) + 'px';
+			var map, center, address;
+
+			function showMap() {
+				plus.nativeUI.showWaiting();
+				//创建地图
+				map = new plus.maps.Map('map');
+				//设置缩放级别
+				map.setZoom(22);
+				//开启用户位置显示
+				map.showUserLocation(true);
+				// 显示地图内置缩放控件
+				map.showZoomControls(true);
+				//map.setTraffic(true);
+				map.getUserLocation(function(state, point) {
+					//console.log(JSON.stringify(point));
+					locationPos = point;
+					center = new plus.maps.Point(point.longitude, point.latitude);
+					console.log(point.longitude + "---" + point.latitude);
+					var _endlongitude = '';
+					var _endLatitude = '';
+					plus.maps.Map.geocode("上海嘉定区马陆镇浏翔公路2248弄17号", {
+						city: "上海"
+					}, function(event) {
+						var address = event.address; // 转换后的地理位置
+						var _point = event.coord; // 转换后的坐标信息
+						var coordType = event.coordType; // 转换后的坐标系类型
+						_endlongitude = _point.longitude;
+						_endLatitude = _point.latitude;
+						
+						var searchObj = new plus.maps.Search(map);
+						//searchObj.setDrivingPolicy('maps.SearchPolicy.DRIVING_FEE_FIRST');
+						searchObj.onRouteSearchComplete = function(state, result) {
+							console.log("onRouteSearchComplete: " + state + " , " + result.routeNumber);
+							if(state == 0) {
+								if(result.routeNumber <= 0) {
+									console.log("没有检索到结果");
+								}
+								/*for(var i = 0; i < result.routeNumber; i++) {
+									map.addOverlay(result.getRoute(i));
+								}*/
+								//默认以时间最短排序，取第一个
+								map.addOverlay(result.getRoute(0))
+							} else {
+								console.log("检索失败");
+							}
+						}
+						searchObj.drivingSearch(new plus.maps.Point(point.longitude, point.latitude), "上海", new plus.maps.Point(_endlongitude, _endLatitude), "上海");
+				
+						plus.maps.Map.calculateDistance(new plus.maps.Point(point.longitude, point.latitude), new plus.maps.Point(_endlongitude, _endLatitude), function(event) {
+
+							var distance = event.distance; // 转换后的距离值
+							console.log("Distance:" + distance);
+
+						}, function(e) {
+
+							//console.log("Failed:" + JSON.stringify(e));
+
+						});
+
+						//console.log("Coord:" + JSON.stringify(point));
+					}, function(e) {
+						//console.log("Failed:" + JSON.stringify(e));
+					});
+				});
+				//获取用户地址信息
+				plus.geolocation.getCurrentPosition(function(p) {
+					plus.nativeUI.closeWaiting();
+					address = p.address.poiName;
+					document.getElementById('address').innerHTML = address;
+				}, function() {
+
+				});
+
+			}
+
+			var winHeight = document.documentElement.clientHeight
+			document.getElementById('map').style.height = (winHeight - 88 - 64) + 'px';
+
+			document.addEventListener('plusready', function() {
+				showMap();
+			});
+
+			function goto() {
+				plus.maps.openSysMap(center, address, center);
+			}
+		</script>
+	</body>
+
+</html>
