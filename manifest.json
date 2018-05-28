@@ -41,6 +41,9 @@
 		},
 		"Speech": {
 			"description": "管理语音识别插件"
+		},
+		"OAuth": {
+			"description": "登录授权"
 		}
 	},
 	"plus": {
@@ -52,6 +55,12 @@
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
 		"distribute": {
 			"plugins": {
+				"oauth": {
+					"qq": {
+						"appid": "1106935672",
+						 "description": "QQ登录"
+					}
+				},
 				"maps": {
 					"amap": {
 						"appkey_ios": "9a06205e708811d29dafc7ffa66cb2da",
@@ -173,8 +182,7 @@
 			"rp": false,
 			"splash": false,
 			"push": false
-		},
-		"adid": ""
+		}
 	},
 	"dependencies": {
 		"pages": {

@@ -4,9 +4,10 @@ body {
 	height: 100%;
 }
 
-.mui-content {
+
+/*.mui-content {
 	height: 100%;
-}
+}*/
 
 .mui-btn-danger,
 .mui-btn-negative,
@@ -17,6 +18,7 @@ body {
 }
 
 .md-user-info {
+	position: relative;
 	display: flex;
 	margin: 10px;
 }
@@ -52,4 +54,16 @@ body {
 
 .md-slider-handle-date {
 	text-align: right;
+}
+
+.md-up-top {
+	position: fixed;
+	z-index: 999;
+	right: 10px;
+	bottom: 10%;
+	color: white;
+	font-size: 36px;
+	background-color: #9E9E9E;
+	border-radius: 30px;
+	opacity: .7;
 }

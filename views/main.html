@@ -20,7 +20,8 @@
 				<h1 class="mui-title" id="title" v-text="title"></h1>
 			</header>
 			<div class="mui-content">
-				<div class="md-user-info">
+				<div  style="position: fixed;width: 100%;z-index: 10;background-color: #fff;">
+					<div class="md-user-info">
 					<span class="flex-item" >版本号：<span v-text="appVersion"></span></span>
 					<span class="flex-item md-text-align">欢迎：
                     <span>周晟</span>
@@ -46,10 +47,12 @@
 					</li>
 				</ul>
 				<h3 class="notice-title">公告</h3>
-				<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+				</div>
+				
+				<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="margin-top: 55%;">
 					<div class="mui-scroll">
 						<ul class="mui-table-view">
-							<li class="mui-table-view-cell mui-media" v-for="(notice, index) in noticeData">
+							<li class="mui-table-view-cell mui-media cell-item" v-for="(notice, index) in noticeData">
 								<div class="mui-slider-right mui-disabled">
 									<a class="mui-btn mui-btn-red">
 										<img class="img-width" src="../imgs/ic_download.png" />
@@ -66,6 +69,7 @@
 					</div>
 				</div>
 			</div>
+			<div><span class="mui-icon mui-icon-arrowthinup md-up-top" v-show="isTop" @click="onGoTop"></span></div>
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript" src="../js/vue.min.js"></script>
