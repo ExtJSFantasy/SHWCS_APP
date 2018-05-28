@@ -111,3 +111,34 @@ function getLsItem(key) {
 function setLsItem(key, value) {
 	localStorage.setItem(this.getLsKey(key), value);
 }
+var server = "http://192.168.75.223:8080/updateAndroid/update.json"; //获取升级描述文件服务器文件
+//自动更新的新方法
+function update(code) {
+	mui.getJSON(server, {
+		"appid": plus.runtime.appid,
+		"version": plus.runtime.version,
+		"imei": plus.device.imei
+	}, function(data) {
+		if(code != data.mark) {
+			if(data.state) {
+				plus.nativeUI.confirm('EQMS', function(event) {
+					if(0 == event.index) {
+						//plus.runtime.openURL(data.url);
+						var wt = plus.nativeUI.showWaiting('下载更新中，请勿关闭');
+						var url = data.url; // 下载文件地址  
+						var dtask = plus.downloader.createDownload(url, {}, function(d, status) {
+							if(status == 200) { // 下载成功 
+								var path = d.filename;
+								plus.runtime.install(path);
+							} else { //下载失败 
+								alert("Download failed: " + status);
+							}
+						});
+						dtask.start();
+					}
+				}, 'EQMS', ["立即更新", "取  消"]);
+			}
+		}
+
+	});
+}

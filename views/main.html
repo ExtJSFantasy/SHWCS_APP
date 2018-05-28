@@ -5,258 +5,71 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link href="../css/mui.min.css" rel="stylesheet" />
-		<style type="text/css">
-			html,
-			body {
-				width: 100%;
-				height: 100%;
-			}
-			
-			.mui-btn-danger,
-			.mui-btn-negative,
-			.mui-btn-red {
-				color: #fff;
-				border: 1px solid #dd524d;
-				background-color: #9E9E9E;
-			}
-		</style>
+		<link rel="stylesheet" href="../css/main.css" />
 	</head>
 
 	<body>
 		<div class="mui-content" id="main">
 			<header class="mui-bar mui-bar-nav">
-				<a class="mui-pull-left"><img style="width: 36px;" src="../imgs/ic_logo.png" /></a>
-				<h1 class="mui-title" id="title">上海市废弃物管理综合评估系统</h1>
+				<a class="mui-pull-left">
+					<img class="header-img-width" src="../imgs/ic_logo.png" />
+				</a>
+				<h1 class="mui-title" id="title" v-text="title"></h1>
 			</header>
 			<div class="mui-content">
-				<div style="display: flex;margin: 10px;"><span style="flex: 1;">版本号：1.0.5</span><span style="flex: 1;text-align: right;">欢迎：周晟</span></div>
+				<div class="md-user-info">
+					<span class="flex-item" >版本号：<span v-text="appVersion"></span></span>
+					<span class="flex-item md-text-align">欢迎：
+                    <span>周晟</span>
+					</span>
+				</div>
 
 				<ul class="mui-table-view mui-grid-view">
 					<li class="mui-table-view-cell mui-col-xs-3 mui-col-sm-3" @click="onClickGoInfo">
-						<img style="width: 48px;" src="../imgs/ic_caiji.png" />
+						<img class="img-width" src="../imgs/ic_caiji.png" />
 						<div class="mui-media-body">信息采集</div>
 					</li>
 					<li class="mui-table-view-cell mui-col-xs-3 mui-col-sm-3">
-						<img style="width: 48px;" src="../imgs/ic_dingwei.png" @click="onClickGoCollected" />
+						<img class="img-width" src="../imgs/ic_dingwei.png" @click="onClickGoCollected" />
 						<div class="mui-media-body">定点采集</div>
 					</li>
 					<li class="mui-table-view-cell mui-col-xs-3 mui-col-sm-3">
-						<img style="width: 48px;" src="../imgs/ic_qu.png" />
+						<img class="img-width" src="../imgs/ic_qu.png" />
 						<div class="mui-media-body">整改(区)</div>
 					</li>
 					<li class="mui-table-view-cell mui-col-xs-3 mui-col-sm-3">
-						<img style="width: 48px;" src="../imgs/ic_city.png" />
+						<img class="img-width" src="../imgs/ic_city.png" />
 						<div class="mui-media-body">整改(市)</div>
 					</li>
 				</ul>
-				<h3 style="text-align: center;margin-top: 10px;">公告</h1>
-				<div class="mui-content">
-					<div class="mui-scroll-wrapper mui-content" style="margin-top: 5%;"    id="pullrefresh">
-						<div class="mui-scroll">
-							<ul class="mui-table-view" >
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-								<li class="mui-table-view-cell mui-media">
-									<div class="mui-slider-right mui-disabled">
-										<a class="mui-btn mui-btn-red"><img style="width: 48px;" src="../imgs/ic_download.png" /></a>
-									</div>
-									<div class="mui-slider-handle">
-										<a href="javascript:;" style="color: #222;">
-											<p style="color: #000;">公告1看洪都拉斯计划的垃圾狄拉克世界大力士看加拉速度加快</p>
-											<p style="text-align: right;">2018-05-17</p>
-										</a>
-									</div>
-								</li>
-							</ul>
-						</div>
+				<h3 class="notice-title">公告</h3>
+				<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell mui-media" v-for="(notice, index) in noticeData">
+								<div class="mui-slider-right mui-disabled">
+									<a class="mui-btn mui-btn-red">
+										<img class="img-width" src="../imgs/ic_download.png" />
+									</a>
+								</div>
+								<div class="mui-slider-handle">
+									<a href="javascript:;" class="md-slider-handle">
+										<p class="md-slider-handle-content" v-text="notice.content"></p>
+										<p class="md-slider-handle-date" v-text="notice.releaseDate"></p>
+									</a>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 		<script src="../js/mui.min.js"></script>
-		<script type="text/javascript" src="../js/vue.min.js" ></script>
-		<script type="text/javascript">
-		var _app = new Vue({
-				el:'#main',
-				data:{},
-				mounted(){
-					mui.init({
-						pullRefresh: {
-							container: '#pullrefresh',
-							down: {
-								style:'circle',
-								callback: pulldownRefresh
-							},
-							up: {
-								auto:true,
-								contentrefresh: '正在加载...',
-								callback: pullupRefresh
-							}
-						}
-					})
-					mui('.mui-scroll-wrapper').scroll({
-						indicators: true //是否显示滚动条
-					});
-				},
-				methods:{
-					onClickGoInfo(){
-						mui.openWindow({
-							url:'inforCollection.html',
-							id:'infoCollection'
-						})
-					},
-					onClickGoCollected(){
-						mui.openWindow({
-							url:'collected.html',
-							id:'collected'
-						})
-					},
-					//pullupRefresh
-				}
-		});
-		var count = 0;
-		function pullupRefresh() {
-			console.log(111);
-		}
-		/**
-		 * 下拉刷新具体业务实现
-		 */
-		function pulldownRefresh() {
-			console.log(222222);
-		}
-		
-		</script>
+		<script type="text/javascript" src="../js/vue.min.js"></script>
+		<script type="text/javascript" src="../controllers/main.js" ></script>
 	</body>
 
 </html>
